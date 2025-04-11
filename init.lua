@@ -1,3 +1,20 @@
+--[[
+    Hammerspoon Configuration
+    
+    This script configures Hammerspoon to:
+    1. Install the CLI for Hammerspoon IPC
+    2. Automatically reset external monitor brightness to 100% when:
+       - Screens are connected/disconnected (with 3 second delay)
+       - Hammerspoon starts up (with 5 second delay)
+    
+    The script uses m1ddc utility (expected at /opt/homebrew/bin/m1ddc) to control
+    monitor brightness and provides notifications about the process status.
+    
+    Dependencies:
+    - m1ddc utility installed via Homebrew
+    - Hammerspoon with hs.ipc, hs.notify, hs.task, hs.screen, and hs.timer modules
+--]]
+
 -- Load the IPC module
 hs.ipc.cliInstall()
 
